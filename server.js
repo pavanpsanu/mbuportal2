@@ -10,9 +10,9 @@ app.use(cors())
 const excelToJson = require('convert-excel-to-json');
 
 // app.use(bodyParser.json());
-app.use(express.static(process.cwd()+"../../staticfrontend/dist/mbuportalclone"));
+app.use(express.static(process.cwd()+"/staticfrontend/dist/mbuportalclone"));
 const result = excelToJson({
-    sourceFile: 'C:/Users/testusr/Pictures/newportalclone/backend/Excelfiles/Accelerator.xlsx',
+    sourceFile: './Excelfiles/Accelerator.xlsx',
     // range: 'A1:H3',
     
     columnToKey: {
@@ -32,7 +32,7 @@ console.log(result)
 
 
 app.get('/', (req, res) => {
-    res.sendFile(process.cwd()+"../../staticfrontend/dist/mbuportalclone/index.html")
+    res.sendFile(process.cwd()+"/staticfrontend/dist/mbuportalclone/index.html")
 });
 
 app.get('/getjsonvaluesofexcel', (req, res) => {
